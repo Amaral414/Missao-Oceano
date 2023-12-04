@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>telaPrincipal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500"/>
+  <link rel="stylesheet" href="./estilos/telaprincipal.css"/>
+  </head>
+
+<body>
+  <form class="telaPrincipal"><!---->
+    
+    <!--divisao da barra do topo-->
+    <div class="barraDoTopo">
+      <img class="inconeMenu" src="./assets/leading-icon.png"/>
+      <label class="tituloTextoBarra">Missão Oceano</label>
+    </div>
+
+    <img class="fotoDoUsuario" src="./assets/icon.png"/>
+    
+    <!--texto que será herdado do nome do usuário-->
+    <label class="nomeDoUsuario" >Nome do usuário</label>
+    
+    <!--divisão de um usuário-->
+    <div class="grupoFileiraDeUsuario">
+      <div class="fileiraDeUsuario">
+        <img class="imagemUsuarioCadastrado" src="./assets/user-images-user-images-92U.png"/>
+        <label class="nomeCornoCadastrado">Nomes</label> <!--nome ds usuários cadastrados-->
+      </div>
+    </div>
+       
+
+  </form>
+
+  <script>
+    window.onload = function () {
+        // Obter nome do usuário do localStorage
+        var nomeUsuario = localStorage.getItem('usuarioLogado');
+        
+        // Exibir o nome do usuário na tela
+        document.getElementById('nomeDoUsuario').innerText = nomeUsuario;
+    };
+</script>
+  
+
+</body>

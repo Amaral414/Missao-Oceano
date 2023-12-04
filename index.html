@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>telaLogin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500%2C800"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C800"/>
+  <link rel="stylesheet" href="./estilos/telalogin.css"/>  
+  
+</head>
+
+<body>
+
+ 
+  
+  <!--divisão tela de login-->
+  <form class="telaLogin">
+    
+    <!--imagem do logo missao oceano / OK-->
+    <img class="imagemLogo" src="./assets/image-1.png"/>
+    
+    <!--texto em cima do campo de email / OK-->
+    
+    <label class="emailTexto">Email</label>
+
+    <!--campo para digitar o email / OK-->
+    <input id="email" class="emailInput" type="text" placeholder="   Digite seu email...">      
+    
+    <!--texto em cima do campo de senha / OK-->
+    <label class="senhaTexto">Senha</label>
+
+    <!--campo para digitar a senha / OK-->
+    <input id="senha" class="senhaInput" type="password" placeholder="   Digite sua senha...">
+    
+    <!--texto possuir cadastro-->
+    <label class="possuiCadasto">Não possui um cadastro?</label>
+
+    <!--botão que vai para a tela de cadastro-->
+    <a class="realizarCadastro" href="telacadastro.html">Cadastre-se</a>
+    
+    <!--botao para entrar-->
+    <button type="button" class="botaoEntrar" onclick="login()">Entrar</button>
+
+  </form>
+  <script>
+    function login() {
+        // Obter valores dos campos
+        var email = document.getElementById('email').value;
+        var senha = document.getElementById('senha').value;
+
+        // Verificar se o usuário existe
+        var usuario = JSON.parse(localStorage.getItem(email));
+
+        if (usuario && usuario.senha === senha) {
+            // Redirecionar para a tela principal
+            window.location.href = 'telaprincipal.html';
+        } else {
+            alert('Credenciais inválidas. Por favor, verifique seu email e senha.');
+        }
+    }
+</script>
+  
+</body>

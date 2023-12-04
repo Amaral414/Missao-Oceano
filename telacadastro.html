@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>telaCadastro</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500"/>
+  <link rel="stylesheet" href="./estilos/telacadastro.css"/>  
+</head>
+
+<body>
+
+  <!--divisão da tela de cadastro-->
+  <form class="telaCadastro">
+    
+    <!--imagem do logo missão oceano / OK-->
+    <img class="imagemLogo" src="./assets/image-1-QmS.png"/>
+    
+    <!--texto em cima do campo de nome-->
+    <label class="nomeTexto">Nome</label> 
+    
+    <!--campo para digitar o nome / MUDAR PARA CAMPTEXT-->
+    <input id="nome" class="nomeInput" type="text" placeholder="   Digite seu nome...">
+        
+    <!--texto em cima do campo de texto-->
+    <label class="emailTexto">Email</label> 
+    
+    <!--campo para digitar o email / OK-->    
+    <input id="email" class="emailInput" type="text" placeholder="   Digite seu email...">      
+          
+    <!--texto em cima do campo de senha-->
+    <label class="senhaTexto">Senha</label>
+    
+    <!--campo para digitar a senha / MUDAR PARA CAMPTEXT-->    
+    <input id="senha" class="senhaInput" type="password" placeholder="   Digite sua senha...">
+      
+    <!--botão para entrar-->
+    <button type="button" class="botaoCadastrar" onclick="salvarValor()">Cadastrar</button>
+  </form>
+
+  <script>
+    function salvarValor() {
+        // Obter valores dos campos
+        var nome = document.getElementById('nome').value;
+        var email = document.getElementById('email').value;
+        var senha = document.getElementById('senha').value;
+
+        // Salvar no localStorage
+        localStorage.setItem(email, JSON.stringify({ nome: nome, senha: senha }));
+
+        // Redirecionar para a tela de login
+        window.location.href = 'index.html';
+    }
+</script>
+
+   
+</body>
