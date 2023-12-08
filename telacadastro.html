@@ -22,7 +22,7 @@
     <!--texto em cima do campo de nome-->
     <label class="nomeTexto">Nome</label> 
     
-    <!--campo para digitar o nome / MUDAR PARA CAMPTEXT-->
+    <!--campo para digitar o nome / OK-->
     <input id="nome" class="nomeInput" type="text" placeholder="   Digite seu nome...">
         
     <!--texto em cima do campo de texto-->
@@ -49,7 +49,9 @@
         var senha = document.getElementById('senha').value;
 
         // Salvar no localStorage
-        localStorage.setItem(email, JSON.stringify({ nome: nome, senha: senha }));
+        localStorage.setItem('email', email);
+        localStorage.setItem('nome', nome);
+        localStorage.setItem(email, JSON.stringify({ senha: senha }));
 
         // Redirecionar para a tela de login
         window.location.href = 'index.html';

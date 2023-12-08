@@ -25,7 +25,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #2184c6;
-  border-radius: 2rem;
 }
 .telaCadastro .imagemLogo {
   margin: 0rem 0rem 6.1rem 0.3rem;

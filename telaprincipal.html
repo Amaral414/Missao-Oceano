@@ -23,7 +23,7 @@
     <img class="fotoDoUsuario" src="./assets/icon.png"/>
     
     <!--texto que será herdado do nome do usuário-->
-    <label class="nomeDoUsuario" >Nome do usuário</label>
+    <p id="nomeDeUsuario" class="nomeDoUsuario" >NOME DE USUARIO</p>
     
     <!--divisão de um usuário-->
     <div class="grupoFileiraDeUsuario">
@@ -37,13 +37,25 @@
   </form>
 
   <script>
-    window.onload = function () {
-        // Obter nome do usuário do localStorage
-        var nomeUsuario = localStorage.getItem('usuarioLogado');
+
+    // Função para obter o nome de usuário do localStorage e exibi-lo no label
+    function exibirNomeDeUsuario() {
+      // Obter o nome de usuário do localStorage
+      var nomeDoUsuario = localStorage.getItem('nome');
+
+      // Verificar se o nome de usuário existe e exibi-lo no label
+      if (nomeDoUsuario) {
+        document.getElementById('nomeDeUsuario').textContent = nomeDoUsuario;
+      }
+    }
+
+    // Chamar a função ao carregar a página
+    window.onload = exibirNomeDeUsuario;
+
+  
         
-        // Exibir o nome do usuário na tela
-        document.getElementById('nomeDoUsuario').innerText = nomeUsuario;
-    };
+
+    
 </script>
   
 

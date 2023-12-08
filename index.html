@@ -42,11 +42,31 @@
     <a class="realizarCadastro" href="telacadastro.html">Cadastre-se</a>
     
     <!--botao para entrar-->
-    <button type="button" class="botaoEntrar" onclick="login()">Entrar</button>
+    <button type="submit" class="botaoEntrar" onclick="login()">Entrar</button>
 
   </form>
+
+
+
   <script>
+    const form = document.querySelector(".telaLogin")
+    const emailInput = document.querySelector(".emailInput")
+    const senhaInput = document.querySelector(".senhaInput")
+
+    
+
     function login() {
+      
+      // ======================= BLOCO NOVO ======================
+
+      form.addEventListener("submit", (event) => {      
+      event.preventDefault();
+      // Verifica se o campo de e-mail esta vazio:
+      if(emailInput.value ===""){
+        alert("Preencha os campos vazios");
+        return;
+      }
+      else{
         // Obter valores dos campos
         var email = document.getElementById('email').value;
         var senha = document.getElementById('senha').value;
@@ -54,12 +74,23 @@
         // Verificar se o usuário existe
         var usuario = JSON.parse(localStorage.getItem(email));
 
-        if (usuario && usuario.senha === senha) {
-            // Redirecionar para a tela principal
-            window.location.href = 'telaprincipal.html';
+        // Verifica se o e-mail e senha estão corretos
+          
+        if (usuario && usuario.senha === senha ) {
+          // Redirecionar para a tela principal
+          window.location.href = 'telaprincipal.html';
         } else {
-            alert('Credenciais inválidas. Por favor, verifique seu email e senha.');
+              alert('Credenciais inválidas. Por favor, verifique seu email e senha.');
         }
+      }
+    })
+       // ========================================================
+
+
+
+
+      
+
     }
 </script>
   
